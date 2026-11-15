@@ -1,0 +1,8 @@
+Column,Missing Values,Placeholders,Wrong Number Format,Text Problems,Invalid Values,IQR Outliers
+Country,0,0,0,0,0,0
+Year,0,0,0,0,0,0
+Food Category,0,0,0,0,0,0
+Total Waste (Tons),220,0,0,0,0,0
+Economic Loss (Million $),0,0,0,0,0,0
+Avg Waste per Capita (Kg),229,0,0,0,0,0
+Household Waste (%),116,0,0,0,0,0
