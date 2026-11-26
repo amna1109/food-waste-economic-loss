@@ -1,0 +1,9 @@
+Column,Meaning,Expected Type,Unit
+Country,Country name,Text,None
+Year,Year of the record,Integer,Year
+Food Category,Type of food,Text,None
+Total Waste (Tons),Total food waste,Number,Tons
+Economic Loss (Million $),Money lost from food waste,Number,Million USD
+Avg Waste per Capita (Kg),Average waste per person,Number,Kg per person
+Population (Million),Population value (removed during cleaning due to unreliable values),Number,Million people
+Household Waste (%),Household waste percentage,Number,Percent

@@ -1,0 +1,9 @@
+Issue,Before,After,Change
+Rows,5150,3575,-1575
+Exact Duplicates,35,0,-35
+Missing Values,2561,565,-1996
+Placeholders,180,0,-180
+Wrong Number Format,0,0,0
+Text Problems,375,0,-375
+Invalid Values,191,0,-191
+IQR Outliers,83,0,-83
