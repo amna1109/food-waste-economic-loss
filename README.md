@@ -24,3 +24,8 @@ https://food-waste-unep.streamlit.app/
 
 ## How to run the app locally
 python -m streamlit run app/app.py
+
+## Contributions
+
+- Maryam Yousef: Data cleaning (notebooks/01_data_cleaning.ipynb), data quality reports in docs/, and report sections 3–4.
+- Amna Saood: Problem formulation, dataset selection, modelling, Streamlit app, and report sections 1–2 and 5–7.
