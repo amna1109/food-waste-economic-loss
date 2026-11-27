@@ -18,3 +18,9 @@ Countries measure waste in tons, so it's harder to identify how much money was l
 
 ## AI use
 We used AI tools CALUDE, DEEPSEEK AND CHATGPT to help generate the code and to run a quick analysis to check whether our choice of prediction and model was possible. All written explanations are our own.
+
+## Live app
+https://food-waste-unep.streamlit.app/
+
+## How to run the app locally
+python -m streamlit run app/app.py
