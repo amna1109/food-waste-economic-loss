@@ -1,0 +1,4 @@
+,Accuracy
+Majority-class baseline,0.142
+Random Forest classifier,0.119
+Random guessing (1 / number of categories),0.125

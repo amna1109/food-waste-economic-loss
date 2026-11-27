@@ -1,0 +1,5 @@
+Model,CV R²,CV R² std,CV MAE (M$),CV RMSE (M$)
+Linear Regression,0.95,0.002,2461.686,3290.202
+Gradient Boosting,0.947,0.001,2491.728,3357.601
+Random Forest,0.945,0.001,2527.5,3449.653
+Baseline (mean),-0.002,0.002,12582.123,14661.544

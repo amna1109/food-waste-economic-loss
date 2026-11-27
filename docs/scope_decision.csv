@@ -1,0 +1,4 @@
+Test rows,Rows,R²,MAE
+All rows (missing waste imputed),715,0.868,3296.682
+Rows WITH Total Waste,662,0.95,2462.277
+Rows WITHOUT Total Waste,53,-0.031,13718.869

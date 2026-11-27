@@ -1,0 +1,3 @@
+Model,Test R²,Test MAE (M$),Test RMSE (M$)
+Baseline (mean),-0.002,12503.36,14652.197
+Ridge (tuned linear),0.95,2501.155,3285.396

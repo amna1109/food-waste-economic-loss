@@ -2,3 +2,5 @@ pandas
 numpy
 matplotlib
 openpyxl
+scikit-learn
+streamlit

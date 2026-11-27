@@ -1,0 +1,4 @@
+Model,CV R² before tuning,CV R² after tuning,Improvement,Best parameters
+Ridge (tuned linear),0.95,0.9496,-0.0004,{'alpha': 10}
+Random Forest,0.945,0.9471,0.0021,"{'max_depth': 10, 'min_samples_leaf': 10, 'n_estimators': 200}"
+Gradient Boosting,0.947,0.9485,0.0015,"{'learning_rate': 0.03, 'max_depth': 2, 'n_estimators': 300}"

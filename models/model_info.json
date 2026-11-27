@@ -1,0 +1,12 @@
+{
+  "model_name": "Ridge (tuned linear)",
+  "params": {
+    "alpha": 10
+  },
+  "test_r2": 0.9496,
+  "test_mae": 2501.16,
+  "test_rmse": 3285.4,
+  "train_rows": 2684,
+  "waste_min": 502.61,
+  "waste_max": 49990.76
+}

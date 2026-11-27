@@ -1,0 +1,6 @@
+Feature set,CV R² (mean),CV R² (std)
+A: Total Waste only,0.8964,0.0108
+B: All original features,0.8949,0.011
+C: B + Years Since 2018,0.8949,0.011
+D: B + Waste Missing flag,0.8941,0.0108
+E: B + Waste x Category,0.8936,0.0113
