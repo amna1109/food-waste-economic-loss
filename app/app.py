@@ -2,13 +2,15 @@
 UNEP Food Waste Economic Loss Predictor
 Streamlit app for CDS 4003 final project (Stage 7 - Deployment).
 
-The model is rebuilt at start-up from the cleaned data and the settings chosen in
-notebooks/03_modeling.ipynb (models/model_info.json), so no pickle file is needed
-and the app works with any scikit-learn version.
+The app loads the trained model saved by notebooks/03_modeling.ipynb
+(models/food_waste_model.pkl). If that file is missing or was saved with a
+different scikit-learn version, the app rebuilds the same model from the cleaned
+data and the settings in models/model_info.json, so it always works.
 """
 import json
 from pathlib import Path
 
+import joblib
 import pandas as pd
 import streamlit as st
 from sklearn.compose import ColumnTransformer
@@ -22,6 +24,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 ROOT = Path(__file__).resolve().parent.parent
 DATA_FILE = ROOT / "data" / "cleaned_food_waste.csv"
 INFO_FILE = ROOT / "models" / "model_info.json"
+MODEL_FILE = ROOT / "models" / "food_waste_model.pkl"
 IMPORTANCE_FILE = ROOT / "models" / "feature_importance.csv"
 
 TARGET = "Economic Loss (Million $)"
@@ -58,6 +61,19 @@ def make_regressor(info):
 
 
 @st.cache_resource
+def load_model(data, info):
+    # 1) Use the saved model from the notebook if it loads and works
+    if MODEL_FILE.exists():
+        try:
+            saved = joblib.load(MODEL_FILE)
+            saved.predict(data[NUM_FEATURES + CAT_FEATURES].head(1))
+            return saved, "saved model (models/food_waste_model.pkl)"
+        except Exception:
+            pass
+    # 2) Otherwise rebuild the same model from the saved settings
+    return train_model(data, info), "rebuilt from models/model_info.json"
+
+
 def train_model(data, info):
     preprocessor = ColumnTransformer([
         ("num", Pipeline([("impute", SimpleImputer(strategy="median")),
@@ -75,7 +91,7 @@ def train_model(data, info):
 
 df = load_data()
 info = load_info()
-model = train_model(df, info)
+model, model_source = load_model(df, info)
 
 countries = sorted(df["Country"].unique())
 categories = sorted(df["Food Category"].unique())
@@ -198,6 +214,7 @@ with tab_about:
   {len(df):,} records from {df['Country'].nunique()} countries, 2018–2024.
 - **Model:** {info.get('model_name', '—')} with settings {info.get('params', {})}, chosen in `notebooks/03_modeling.ipynb`
   after comparing a baseline, Linear Regression, Random Forest and Gradient Boosting with cross-validation and tuning.
+- **Model file:** {model_source}.
 - **Performance on unseen test data:** R² = {info.get('test_r2', float('nan')):.3f}, MAE = {info.get('test_mae', float('nan')):,.0f} M$.
 
 **Limitations**
